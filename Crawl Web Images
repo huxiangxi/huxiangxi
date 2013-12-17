@@ -1,8 +1,8 @@
-import re
+import re                          //导入re和urlibe两个模块
 import urllib
 
-def getHtml(url):
-    page = urllib.urlopen(url)
+def getHtml(url):                  //定义getHtml函数来实现抓取指定网页的源代码
+    page = urllib.urlopen(url)                        
     html = page.read()
     return html
 
