@@ -6,7 +6,7 @@ def getHtml(url):                  //定义getHtml函数来实现抓取指定网
     html = page.read()
     return html
 
-def getImg(html):
+def getImg(html):                           //定义getImg函数来过滤并匹配出网页中jpg格式的图片并下载
     reg = r'src="(.+?\.jpg)" pic_ext'
     imgre = re.compile(reg)
     imglist = imgre.findall(html)
@@ -15,5 +15,5 @@ def getImg(html):
         urllib.urlretrieve(imgurl,'%s.jpg' % x)
         x = x + 1        
    
-html = getHtml("http://tieba.baidu.com/p/2460150866?pn=1")
+html = getHtml("http://tieba.baidu.com/p/2460150866?pn=1")    //主函数，输入网页地址并调用函数
 getImg(html)
